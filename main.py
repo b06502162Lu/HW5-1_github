@@ -7,7 +7,7 @@ from train import train, auto_eval
 import argparse
 import wandb
 from test import dev_eval
-
+print("*******",torch.cuda.is_available())
 def main(args):
     # logging
     if args.use_wandb:
@@ -104,14 +104,7 @@ if __name__ == '__main__':
     args.device = torch.device('cuda' )#if torch.cuda.is_available()  else 'cpu')
     args.num_classes = args.num_styles + 1 if args.discriminator_method == 'Multi' else 2
     args.learned_pos_embed = args.learned_pos_embed.lower() in ("true", "1")
-    if torch.cuda.is_available():
-        print("test for gpu usage :  true ")
-    else:
-        print()
-        print()
-        print("********  no use ****************")
-        print()
-        print()
+    
     if args.part2:
         from part2 import part2
         assert args.part2_model_dir, "--part2_model_dir=<trained model dir> is needed" 
