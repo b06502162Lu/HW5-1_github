@@ -101,7 +101,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
     args.drop_rate_config = [(1, 0), (2, args.train_iter)] # (rate, step), ...
     args.temperature_config = [(args.temp, 0), (0.5*args.temp, args.train_iter)] # (temp, step) ...
-    args.device = torch.device('cuda' if torch.cuda.is_available()  else 'cpu')
+    args.device = torch.device('cuda' )#if torch.cuda.is_available()  else 'cpu')
     args.num_classes = args.num_styles + 1 if args.discriminator_method == 'Multi' else 2
     args.learned_pos_embed = args.learned_pos_embed.lower() in ("true", "1")
     if torch.cuda.is_available():
