@@ -106,7 +106,12 @@ if __name__ == '__main__':
     args.learned_pos_embed = args.learned_pos_embed.lower() in ("true", "1")
     if torch.cuda.is_available():
         print("test for gpu usage :  true ")
-    
+    else:
+        print()
+        print()
+        print("********  no use ****************")
+        print()
+        print()
     if args.part2:
         from part2 import part2
         assert args.part2_model_dir, "--part2_model_dir=<trained model dir> is needed" 
