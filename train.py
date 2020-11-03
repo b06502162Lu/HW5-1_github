@@ -383,9 +383,12 @@ def auto_eval(config, vocab, model_F, test_iters, global_step, temperature):
                     temperature=temperature,
                 )
                 
-            gold_text += tensor2text(vocab, inp_tokens.cpu())
-            raw_output += tensor2text(vocab, raw_log_probs.argmax(-1).cpu())
-            rev_output += tensor2text(vocab, rev_log_probs.argmax(-1).cpu())
+            #gold_text += tensor2text(vocab, inp_tokens.cpu())
+            #raw_output += tensor2text(vocab, raw_log_probs.argmax(-1).cpu())
+            #rev_output += tensor2text(vocab, rev_log_probs.argmax(-1).cpu())
+            gold_text += tensor2text(vocab, inp_tokens.cuda())
+            raw_output += tensor2text(vocab, raw_log_probs.argmax(-1).cuda())
+            rev_output += tensor2text(vocab, rev_log_probs.argmax(-1).cuda())
 
         return gold_text, raw_output, rev_output
 
