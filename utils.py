@@ -1,7 +1,8 @@
 import torch
 
 def tensor2text(vocab, tensor, remain_unk=False):
-    tensor = tensor.cpu().numpy()
+    #tensor = tensor.cpu().numpy()
+    tensor = tensor.cuda().numpy()
     text = []
     index2word = vocab.itos
     eos_idx = vocab.stoi['<eos>']
