@@ -12,10 +12,10 @@ class Evaluator(object):
     def __init__(self):
         resource_package = __name__
 
-        yelp_acc_path = '/work/b07u1234/b06502162/HW5-1/HW5-1_github/evaluator/acc_yelp.bin'
-        yelp_ppl_path = '/work/b07u1234/b06502162/HW5-1/HW5-1_github/evaluator/ppl_yelp.binary'
-        yelp_ref0_path = '/work/b07u1234/b06502162/HW5-1/HW5-1_github/evaluator/yelp.refs.0'
-        yelp_ref1_path = '/work/b07u1234/b06502162/HW5-1/HW5-1_github/evaluator/yelp.refs.1'
+        yelp_acc_path = './evaluator/acc_yelp.bin'
+        yelp_ppl_path = './evaluator/ppl_yelp.binary'
+        yelp_ref0_path = '/evaluator/yelp.refs.0'
+        yelp_ref1_path = '/evaluator/yelp.refs.1'
 
         
         yelp_acc_file = pkg_resources.resource_stream(resource_package, yelp_acc_path)
