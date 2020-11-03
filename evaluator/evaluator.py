@@ -17,12 +17,12 @@ class Evaluator(object):
         yelp_ref0_path = 'yelp.refs.0'
         yelp_ref1_path = 'yelp.refs.1'
 
-        print("AAAAAAAAA")
+        #print("AAAAAAAAA")
         yelp_acc_file = pkg_resources.resource_stream(resource_package, yelp_acc_path)
         yelp_ppl_file = pkg_resources.resource_stream(resource_package, yelp_ppl_path)
         yelp_ref0_file = pkg_resources.resource_stream(resource_package, yelp_ref0_path)
         yelp_ref1_file = pkg_resources.resource_stream(resource_package, yelp_ref1_path)
-        print("BBBBBBBBBB")
+        #print("BBBBBBBBBB")
         
         self.yelp_ref = []
         with open(yelp_ref0_file.name, 'r') as fin:
