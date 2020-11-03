@@ -310,7 +310,8 @@ class MultiHeadAttention(nn.Module):
 
         attn_feature, attn_weight = scaled_attention(query, key, value, mask)
 
-        self.attn_weight_hist = attn_weight.detach().cpu()
+        #self.attn_weight_hist = attn_weight.detach().cpu()
+        self.attn_weight_hist = attn_weight.detach().cuda()
 
         attn_concated = attn_feature.transpose(1, 2).contiguous().view(batch_size, -1, self.h * self.d_k)
 

@@ -302,7 +302,7 @@ def train(config, vocab, model_F, model_D, train_iters, dev_iters, test_iters):
         #writer.add_scalar('rec_loss', rec_loss.item(), global_step)
         #writer.add_scalar('loss', loss.item(), global_step)
             
-        
+        """
         if global_step % config.log_steps == 0:
             avrg_d_adv_loss = np.mean(his_d_adv_loss)
             avrg_f_slf_loss = np.mean(his_f_slf_loss)
@@ -317,7 +317,7 @@ def train(config, vocab, model_F, model_D, train_iters, dev_iters, test_iters):
                 temperature, config.inp_drop_prob * drop_decay
             ))
         
-        
+        """
         info = {
             "d_adv":np.mean(his_d_adv_loss),
             "f_slf":np.mean(his_f_slf_loss),
